@@ -1,7 +1,7 @@
 FROM openjdk:8u151-jdk-alpine3.7
 
 
-RUN apk add --no-cache curl tar bash
+RUN apk add --no-cache curl tar bash tzdata
 
 ARG MAVEN_VERSION=3.5.2
 ARG USER_HOME_DIR="/root"
