@@ -13,9 +13,9 @@ RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha256sum -c - \
   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1 \
   && rm -f /tmp/apache-maven.tar.gz \
-  && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-  && cp /usr/share/zoneinfo/Europe/Copenhagen /etc/localtime
-  && echo "Europe/Copenhagen" >  /etc/timezone
+  && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn \
+  && cp /usr/share/zoneinfo/Europe/Copenhagen /etc/localtime \
+  && echo "Europe/Copenhagen" > /etc/timezone
 
 ENV TZ=Europe/Copenhagen
 ENV MAVEN_HOME /usr/share/maven
