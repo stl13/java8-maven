@@ -15,5 +15,6 @@ RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
   && rm -f /tmp/apache-maven.tar.gz \
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
+ENV TZ=Europe/Copenhagen
 ENV MAVEN_HOME /usr/share/maven
 ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
