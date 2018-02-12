@@ -1,6 +1,5 @@
 FROM openjdk:8u151-jdk-alpine3.7
 
-
 RUN apk add --no-cache curl tar bash tzdata
 
 ARG MAVEN_VERSION=3.5.2
@@ -16,6 +15,8 @@ RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn \
   && cp /usr/share/zoneinfo/Europe/Copenhagen /etc/localtime \
   && echo "Europe/Copenhagen" > /etc/timezone
+
+RUN apk add --no-cache mongodb
 
 ENV TZ=Europe/Copenhagen
 ENV MAVEN_HOME /usr/share/maven
