@@ -21,3 +21,5 @@ RUN apk add --no-cache mongodb
 ENV TZ=Europe/Copenhagen
 ENV MAVEN_HOME /usr/share/maven
 ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
+
+CMD ["mongod"]
